@@ -1,4 +1,6 @@
 *.suo
 obj/
 bin/
+Ext.Net.Examples/obj/
+Ext.Net.Examples/bin/
 *.user

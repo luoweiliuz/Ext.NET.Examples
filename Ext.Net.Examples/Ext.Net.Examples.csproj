@@ -537,7 +537,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Ext.Net\Ext.Net.csproj">
+    <ProjectReference Include="..\..\..\..\..\v2\Ext.Net\Ext.Net.csproj">
       <Project>{195F2E70-F5E6-4A61-AAD9-2639657C29C4}</Project>
       <Name>Ext.Net</Name>
     </ProjectReference>

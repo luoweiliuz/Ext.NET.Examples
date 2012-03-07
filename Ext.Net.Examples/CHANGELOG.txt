@@ -695,7 +695,7 @@
 
 72. TabPanel ResizeTabs has been renamed to Resizable.
 
-73. CenterLayout has been removed. You can use, for example, a combination of HBoxLayout and VBoxLayout.
+73. CenterLayout has been removed. Please us a combination of HBoxLayout and VBoxLayout.
 
 74. ToolbarReorderer plugin has been renamed to BoxReorderer.
 
@@ -764,18 +764,18 @@
 
 91. There is no ViewState on page by default, i.e. ResourceManager DisableViewState="true" by default.
 
-	To get it back, set up DisableViewState="false" for ResourceManager.
+	To get it back, set .DisableViewState="false" for ResourceManager.
 	
 92. ColumnLayout doesn't support FitHeight and Split options. 
 
-	Please use HBox layout if you need those functionality.
+	Please use HBox layout if you need this functionality.
 
 93. The type of TextFieldBase Validator has been changed to JFunction (was string).
 
 	Example
 
 	//Old
-	<ext:TextField runat="server"  Validator="myValidator">
+	<ext:TextField runat="server" Validator="myValidator">
 
 	//New
 	<ext:TextField runat="server">
