@@ -55,6 +55,8 @@
     <folder name="Loaders\Component\Http_Handler\" />
     <folder name="Loaders\Component\JSON_WebService\" />
     <folder name="Loaders\Data\Overview\" />
+    <folder name="MessageBus\Basic\Simple\" />
+    <folder name="MessageBus\Basic\Complex\" />
   </new>
   <!--
   <new version="1.0">

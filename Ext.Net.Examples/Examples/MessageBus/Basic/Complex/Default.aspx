@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Examples/MessageBus/Basic/Complex/MasterPage.Master" %>
+﻿<%@ Page Title="MessageBus - Ext.NET Examples" Language="C#" MasterPageFile="~/Examples/MessageBus/Basic/Complex/MasterPage.Master" %>
+
 <%@ Register Assembly="Ext.Net" Namespace="Ext.Net" TagPrefix="ext" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -10,7 +11,10 @@
         <Items>
             <ext:Panel runat="server" PreventHeader="true" Height="150">
                 <MessageBusListeners>
-                    <ext:MessageBusListener Name="FromUserControl.*" Handler="this.body.createChild({html: 'Name: ' + name, tag:'p'});" />
+                    <ext:MessageBusListener 
+                        Name="FromUserControl.*" 
+                        Handler="this.body.createChild({html: 'Name: ' + name, tag:'p'});" 
+                        />
                 </MessageBusListeners>
             </ext:Panel>
 

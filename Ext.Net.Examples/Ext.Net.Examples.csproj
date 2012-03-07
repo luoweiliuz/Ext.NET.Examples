@@ -450,6 +450,7 @@
     <Content Include="Examples\MessageBus\Basic\Complex\UserControl2.ascx" />
     <Content Include="Examples\MessageBus\Basic\Simple\config.xml" />
     <Content Include="Examples\MessageBus\Basic\Simple\Default.aspx" />
+    <Content Include="Examples\MessageBus\config.xml" />
     <Content Include="Examples\Panel\Basic\Loader\Child.aspx" />
     <Content Include="Examples\Panel\Basic\Loader\config.xml" />
     <Content Include="Examples\Panel\Basic\Loader\Default.aspx" />
