@@ -90,9 +90,10 @@
                         <ext:ListItem Text="Blue Theme (Default)" Value="" />
                         <ext:ListItem Text="Gray Theme" Value="-gray" />
                         <ext:ListItem Text="Accessibility Theme" Value="-access" />
+                        <ext:ListItem Text="Neptune Theme" Value="-neptune" />
                     </Items>
                     <SelectedItems>
-                        <ext:ListItem Index="0" />
+                        <ext:ListItem Index="1" />
                     </SelectedItems>
                     <Listeners>
                         <Select Handler="Ext.net.ResourceMgr.setTheme('/extjs/resources/css/ext-all' + (item.getValue() || '') + '-embedded-css/ext.axd');" />
