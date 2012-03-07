@@ -1,0 +1,569 @@
+﻿body {
+	font-family : 'TTreg';
+    padding     : 20px;
+    font-size   : 15px !important;
+	background  : url(/resources/images/bgnoise.png) 0 0 repeat;
+}
+
+
+/*  TitleBar
+    -----------------------------------------------------------------------------------------------*/
+
+#titlebar {
+	height : 68px;
+	width  : 100%;
+	color  : #00568d;
+	float  : left;
+	background  : url(/resources/images/titlebar-bg.jpg) 0 0 repeat;
+	font-family : 'TTbold';
+	text-shadow : 0 1px 0 rgba(255,255,255,0.8);
+}
+
+#titlebar #left { 
+	margin : 13px 0 0 23px;
+	width  : 850px;
+	float  : left;
+}
+
+#titlebar .title {
+	font-size   : 30px;
+	line-height : 27px;
+	height      : 30px;
+	font-weight : nomral;
+	float       : left;
+	margin      : 1px 0 0 0;
+}
+
+
+#titlebar .title-sub {
+	font-family : 'TTthin';
+	margin      : 0;
+}
+
+#titlebar .minor {
+	font-size   : 14px;
+	line-height : 10px;
+	float       : left;
+	width       : 400px;
+	margin      : 0 0 4px 1px;
+}
+
+#titlebar .badge {
+	color       : #fff;
+	font-family : 'TTlight';
+	font-size   : 12px;
+	line-height : 11px;
+	background  : url(/resources/images/titlebar-badge-bg.png) 0 0 no-repeat;
+	width       : 105px;
+	height      : 16px;
+	float       : left;
+	text-shadow : none;
+	padding     : 2px 0 0 8px;
+	margin      : 8px 0 0 4px;
+}
+
+
+#titlebar #right {
+	float       : right;
+	width       : 197px;
+	height      : 68px;
+	background  : url(/resources/images/titlebar-logo-bg.jpg) 0 0 repeat;
+	border-left : 1px solid #fff;
+    cursor      : pointer;
+}
+
+#titlebar #right a {
+	display : block;
+	width   : 100%;
+	height  : 100%;
+	background: url(/resources/images/ext.net-logo.png) 0 0 no-repeat;
+	background-position: center center;
+}
+
+
+/*  Welcome
+    -----------------------------------------------------------------------------------------------*/
+
+.welcome a {
+	text-decoration : none;	
+}
+
+#welcome-title {
+	float : left;
+	width : 428px;
+	color : #00568d;
+	font-family    : 'TTlight';
+	letter-spacing : 1px;
+	font-size : 56px;
+	margin    : 36px 0 0 46px;
+	padding   : 12px 0 0 0;
+}
+
+#welcome-title div { 
+	line-height : 36px; 
+	width   : 428px;
+	height  : 45px;
+	padding : 0;
+
+}
+
+#welcome-title span {
+	font-size      : 56px;
+	width          : 428px;
+	line-height    : 56px;
+	margin         : 0 0 0 3px;
+	font-family    : 'TTmed';
+	text-transform : uppercase;
+	letter-spacing : 0px;
+}
+
+#welcome-links {
+	float  : left;
+	width  : 442px;
+	margin : 36px 0 0 0;
+}
+
+#welcome-links #title {
+	width       : 427px;
+	color       : #5c5c5c;
+	font-family : 'TTlight';
+	font-size   : 12px;
+	line-height : 12px;
+	padding     : 4px 5px;
+	background  : url(/resources/images/black10.png) 0 0 repeat;
+	text-transform        : uppercase;
+	-webkit-border-radius : 5px;
+	-moz-border-radius    : 5px;
+	border-radius         : 5px;
+}
+
+#welcome-links .list {
+	margin : 10px 0 0 0;
+	width  : 428px;
+}
+
+#welcome-links p {
+	margin     : 0 0 5px 0;
+	background : url(/resources/images/welcome-bullet.png) 0 0 no-repeat;
+}
+
+#welcome-links span {
+	color       : #fff;
+	font-family : 'TTreg';
+	font-size   : 11px;
+	text-align  : center;
+	text-shadow : 0 -1px 0 rgba(0,0,0,0.3);
+	width    : 18px;
+	padding  : 0 6px;
+	margin   : 0 6px 5px 0;
+	position : relative;
+	top      : -2px;
+}
+
+#welcome-links a {
+	font-family : 'TTbold';
+	color       : #000;
+	padding     : 10px 0 0 0;
+	line-height : 20px;
+}
+
+#welcome-links a:hover {
+	color: #63ab45;
+}
+
+#welcome-grid {
+	float      : left;
+	width      : 870px;
+	height     : 419px;
+	background : url(/resources/images/grid.png) bottom left no-repeat;
+	-webkit-border-radius : 5px;
+	-moz-border-radius    : 5px;
+	border-radius : 5px;
+	margin        : 0px 0 0 41px;
+	text-align    : center;
+}
+
+a#grid-badge {
+	background     : url(/resources/images/grid-badge-bg.png) 0 0 repeat-x;
+	font-family    : 'TTxbold';
+	font-size      : 16px;
+	text-transform : uppercase;
+	color   : #fff;
+	float   : left;
+	width   : 267px;
+	height  : 31px;
+	padding : 6px 0 0 0;
+	-webkit-border-top-left-radius : 5px;
+	-moz-border-radius-topleft     : 5px;
+	border-top-left-radius         : 5px;
+	text-shadow : 0 -1px 0 rgba(0,0,0,0.3);
+}
+
+a#grid-badge:hover {
+	background-position : 0 -62px;
+}
+
+#welcome-grid #screens {
+	background : url(/resources/images/welcome-screens.png) 0 0 no-repeat;
+	width      : 816px;
+	height     : 250px;
+	margin     : 30px 0 0 0;
+	float      : right;
+}
+
+#welcome-grid #buttons {
+	width  : 795px;
+	margin : 350px auto;
+}
+
+#welcome-grid #buttons a {
+	width   : 133px;
+	display : block;
+	float   : left;
+	font-family    : 'TTbold';
+	text-transform : uppercase;
+	cursor    : pointer;
+	color     : #fff;
+	font-size : 18px;
+	-webkit-border-radius : 5px;
+	-moz-border-radius    : 5px;
+	border-radius         : 5px;
+	-moz-box-shadow       : 0px 1px 4px #acacac;
+	-webkit-box-shadow    : 0px 1px 4px #acacac;
+	box-shadow : 0px 1px 4px #acacac;
+	border     : 1px solid #ddd;
+	padding    : 5px 0 4px 0;
+	margin     : 0 12px;
+	background : url(/resources/images/button-bg-30tall.png) 0 0 repeat-x;
+	vertical-align : middle;
+}
+
+#welcome-grid #buttons a:hover {
+	background-position : 0 -30px;
+}
+
+#welcome-grid #buttons a:active {
+	background-position : 0 -60px;
+}
+
+#welcome-footer {
+	width      : 870px;
+	margin     : 40px 0 0 41px;
+	text-align : center;
+}
+
+#welcome-footer span {
+	padding     : 6px 0 4px 46px;
+	background  : url(/resources/images/icon-briefcase.png) 0 0 no-repeat;
+	font-family : 'TTreg';
+}
+
+#welcome-footer p {
+	color      : #fff;
+	display    : inline;
+	padding    : 6px 11px;
+	height     : 25px;
+	background : #63ab45;
+	-webkit-border-radius : 5px;
+	-moz-border-radius    : 5px;
+	border-radius : 5px;
+	text-shadow   : 0 -1px 0 rgba(0,0,0,0.3);
+}
+
+
+/*  Misc
+    -----------------------------------------------------------------------------------------------*/
+
+.api-title {
+	color       : #fff;
+	font-size   : 16px;
+	font-weight : normal;
+	padding     : 5px 10px;
+}
+
+div.thumb-wrap {
+	border-color : #555;
+	float        : left;
+	margin       : 5px 5px 5px 10px;
+	width        : 300px;
+	cursor       : pointer;
+	height       : 100px;
+}
+
+div.thumb-wrap img {
+	float  : left;
+	margin : 5px 0px 0px 5px;
+	width  : 120px;
+	height : 90px;
+	border : 1px solid silver;
+}
+
+div.thumb-wrap div {
+	float       : left;
+	margin-left : 10px;
+	width       : 160px;
+}
+
+div.thumb-wrap h4 {
+	font-weight : bold;
+	font-size   : 11px;
+	color       : #555;
+	font-family : tahoma,arial,san-serif;
+	margin      : 5px 0px;
+}
+
+div.thumb-wrap h6 {
+	font-weight : normal;
+	font-size   : 11px;
+	color       : #555;
+	font-family : tahoma,arial,san-serif;
+	margin      : 5px 0px 2px 0px;
+}
+
+div.thumb-wrap p {
+	color        : #777;
+	font         : 11px tahoma,arial,helvetica,sans-serif;
+	margin-right : 5px;
+}
+
+.images-view .x-view-over { background : url(/resources/images/sample-over.gif) #d4e4fa no-repeat; }
+
+#sample-ct { padding : 6px 12px 24px 12px; }
+
+#sample-ct h2 {
+    border-bottom : 2px solid #99bbe8;
+    cursor        : pointer;
+    padding-top   : 6px;
+}
+
+#sample-ct h2 div {
+    background : transparent url(/resources/images/group-expand-sprite.gif) no-repeat 3px -47px;
+    padding    : 4px 4px 4px 17px;
+    color      : #3764a0;
+    font       : bold 11px tahoma, arial, helvetica, sans-serif;
+}
+
+#sample-ct .collapsed h2 div { background-position : 3px 3px; }
+#sample-ct dl { margin-left : 2px; }
+#sample-ct .collapsed dl { display : none; }
+
+.message {
+	text-align    : center;
+	background-color : #000;
+	color         : #999;
+	padding       : 8px;
+	font-family   : Verdana, Arial, Helvetica, Helvetica, sans-serif;
+	font-size     : 12px;
+	border-bottom : 1px solid #202020;
+	height        : 15px;
+}
+
+.message strong {
+    font-weight : bold;
+    color       : #fff;
+}
+
+.message a {
+    color : #fff;
+    text-decoration : underline;
+}
+
+.tabs .x-tab button .x-tab-inner {
+    text-align  : left;
+    font-family : tahoma, arial, helvetica;
+}
+
+
+/* Comments */
+div.ecomment{
+    padding : 0px;
+    padding-bottom : 6px;
+}
+
+table.tborder{
+    border : #dadada 1px solid;
+    color  : #000000;
+    background-color : #ffffff;
+}
+
+td.thead{
+    padding       : 4px;
+    border-bottom : #dadada 1px solid;
+    color         : #444;
+    font-size     : 11px;
+    background    : url(/resources/images/item-hd4.gif) #f9f9f9 repeat-x 0px bottom;
+    font-weight   : bold;
+}
+
+td.alt2{
+    border-bottom : #dddddd 1px solid;
+    padding       : 0px;
+}
+
+.username {
+    font-size   : 10pt;
+    font-weight : bold;
+    color       : #175c9e;
+}
+
+.divider {
+	height        : 1px !important;
+	background    : #a3bad9;
+	margin-bottom : 8px;
+	margin-top    : 8px;
+	overflow      : hidden;
+}
+
+
+/*  Icons
+    -----------------------------------------------------------------------------------------------*/
+
+.icon-expand-all     { background-image : url(/resources/images/expand-all.gif) !important; }
+.icon-collapse-all   { background-image : url(/resources/images/collapse-all.gif) !important; }
+
+.icon-desktop        { background-image : url(/resources/icons/desktop.png) !important; }
+.icon-viewport       { background-image : url(/resources/icons/viewport.png) !important; }
+.icon-tab            { background-image : url(/resources/icons/tab.png) !important; }
+.icon-tabpanel       { background-image : url(/resources/icons/tabpanel.png) !important; }
+.icon-toolbar        { background-image : url(/resources/icons/toolbar.png) !important; }
+
+/*
+.x-tree-icon-leaf {
+    background-image: url("/extjs/resources/themes/images/gray/tree/leaf-gif/ext.axd");
+}
+*/
+
+
+/*  TreePanel
+    -----------------------------------------------------------------------------------------------*/
+
+#exampleTree .x-grid-cell-inner span {
+    margin-left  : 8px;
+    padding-left : 25px;
+    background   : transparent url(/resources/images/new.gif) no-repeat 0px 4px;
+}
+
+#exampleTree .x-grid-tree-node-expanded .x-grid-cell-inner span {
+    background : transparent url(/resources/images/newgray.gif) no-repeat 0px 4px;
+}
+
+#exampleTree-body div {
+	font-family : 'TTbold' !important;
+    font-size   : 15px;
+	color       : #515151;
+}
+
+.x-grid-cell-inner {
+  padding-top : 1px !important;
+  line-height : 18px !important;
+}
+
+tr.x-grid-row-selected td div.x-grid-cell-inner {
+    background-color : #C6E1F4 !important;
+}
+
+.x-grid-row-selected .x-grid-cell, .x-grid-row-selected .x-grid-rowwrap-div {
+    background-color : #C6E1F4 !important;
+}
+
+.x-grid-cell-inner {
+    margin      : 2px 0 !important;
+    padding-top : 1px !important;
+}
+
+.x-tree-icon-parent {
+    margin-right : 8px;
+}
+
+.x-tree-panel .x-grid-cell a { 
+    color   : #005588; 
+    outline : 0 none;
+    text-decoration : none;
+	font-family : 'TTmed' !important;
+    
+}
+
+.x-tree-panel .x-grid-cell a:hover { 
+   text-decoration : none; 
+}
+
+.x-tree-arrows .x-tree-elbow-plus, 
+.x-tree-arrows .x-tree-elbow-minus, 
+.x-tree-arrows .x-tree-elbow-end-plus, 
+.x-tree-arrows .x-tree-elbow-end-minus {
+    background-image : none;
+}
+
+
+.x-tree-panel .x-grid-row .x-grid-cell-inner {
+  height : 19px;
+}
+
+/*  Fonts
+    -----------------------------------------------------------------------------------------------*/
+
+@font-face {
+    font-family : 'TTthin';
+    src : url('/resources/fonts/TitilliumText22L001-webfont.eot');
+    src : url('/resources/fonts/TitilliumText22L001-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/resources/fonts/TitilliumText22L001-webfont.woff') format('woff'),
+         url('/resources/fonts/TitilliumText22L001-webfont.ttf') format('truetype'),
+         url('/resources/fonts/TitilliumText22L001-webfont.svg#TTthin') format('svg');
+    font-weight : normal;
+    font-style  : normal;
+}
+
+@font-face {
+    font-family : 'TTlight';
+    src : url('/resources/fonts/TitilliumText22L002-webfont.eot');
+    src : url('/resources/fonts/TitilliumText22L002-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/resources/fonts/TitilliumText22L002-webfont.woff') format('woff'),
+         url('/resources/fonts/TitilliumText22L002-webfont.ttf') format('truetype'),
+         url('/resources/fonts/TitilliumText22L002-webfont.svg#TTlight') format('svg');
+    font-weight : normal;
+    font-style  : normal;
+}
+
+@font-face {
+    font-family : 'TTreg';
+    src : url('/resources/fonts/TitilliumText22L003-webfont.eot');
+    src : url('/resources/fonts/TitilliumText22L003-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/resources/fonts/TitilliumText22L003-webfont.woff') format('woff'),
+         url('/resources/fonts/TitilliumText22L003-webfont.ttf') format('truetype'),
+         url('/resources/fonts/TitilliumText22L003-webfont.svg#TTreg') format('svg');
+    font-weight : normal;
+    font-style  : normal;
+}
+
+@font-face {
+    font-family : 'TTmed';
+    src : url('/resources/fonts/TitilliumText22L004-webfont.eot');
+    src : url('/resources/fonts/TitilliumText22L004-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/resources/fonts/TitilliumText22L004-webfont.woff') format('woff'),
+         url('/resources/fonts/TitilliumText22L004-webfont.ttf') format('truetype'),
+         url('/resources/fonts/TitilliumText22L004-webfont.svg#TTmed') format('svg');
+    font-weight : normal;
+    font-style  : normal;
+}
+
+@font-face {
+    font-family : 'TTbold';
+    src : url('/resources/fonts/TitilliumText22L005-webfont.eot');
+    src : url('/resources/fonts/TitilliumText22L005-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/resources/fonts/TitilliumText22L005-webfont.woff') format('woff'),
+         url('/resources/fonts/TitilliumText22L005-webfont.ttf') format('truetype'),
+         url('/resources/fonts/TitilliumText22L005-webfont.svg#TTbold') format('svg');
+    font-weight : normal;
+    font-style  : normal;
+}
+
+@font-face {
+    font-family : 'TTxbold';
+    src : url('/resources/fonts/TitilliumText22L006-webfont.eot');
+    src : url('/resources/fonts/TitilliumText22L006-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/resources/fonts/TitilliumText22L006-webfont.woff') format('woff'),
+         url('/resources/fonts/TitilliumText22L006-webfont.ttf') format('truetype'),
+         url('/resources/fonts/TitilliumText22L006-webfont.svg#TTxbold') format('svg');
+    font-weight : normal;
+    font-style  : normal;
+}
