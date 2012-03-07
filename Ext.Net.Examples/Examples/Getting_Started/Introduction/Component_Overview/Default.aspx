@@ -90,7 +90,6 @@
                         <ext:ListItem Text="Blue Theme (Default)" Value="" />
                         <ext:ListItem Text="Gray Theme" Value="-gray" />
                         <ext:ListItem Text="Accessibility Theme" Value="-access" />
-                        <ext:ListItem Text="Neptune Theme" Value="-neptune" />
                     </Items>
                     <SelectedItems>
                         <ext:ListItem Index="1" />

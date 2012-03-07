@@ -164,7 +164,6 @@
                                                                     <ext:CheckMenuItem ID="DefaultThemeItem" runat="server" Text="Default" Group="theme" />
                                                                     <ext:CheckMenuItem ID="GrayThemeItem" runat="server" Text="Gray" Group="theme" Checked="true"  />
                                                                     <ext:CheckMenuItem ID="AccessThemeItem" runat="server" Text="Access" Group="theme" />
-                                                                    <ext:CheckMenuItem ID="NeptuneThemeItem" runat="server" Text="Neptune" Group="theme" />
                                                                 </Items>
                                                                 <Listeners>
                                                                     <Click Handler="#{DirectMethods}.GetThemeUrl(menuItem.text,{
