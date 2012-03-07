@@ -7,7 +7,6 @@
 <html>
 <head runat="server">
     <title>Ext.NET Examples</title>
-    <link href="/resources/css/examples.css" rel="stylesheet" type="text/css" />
     
     <style type="text/css">
         .cards-conatiner {
@@ -32,7 +31,7 @@
         .cards-header li {
 	        margin: 0px;
 	        padding: 7px 5px 2px 0px;
-            width:23%;
+            width:25%;
 	        background-color: #F8F5E8;
 	        text-transform:uppercase;
 	        color:#333;
@@ -45,6 +44,10 @@
 	        cursor: pointer;
 	        text-align:center;
 	        border-bottom: none;
+       }
+
+       .x-ie6 .cards-header li, .x-ie7 .cards-header li {
+            width:23%;
        }
        
        .cards-header li a, .cards-header li a:visited {
@@ -67,31 +70,34 @@
 	        padding: 0px;
 	        float:left;
 	        border: 5px solid #F8F5E8;
-        }
-        
+        }        
         
         .current-card {
 	        margin: 0px;
 	        padding: 10px;
-            width:359px;
+            width:380px;
 	        border-left: 1px solid #dddddd;
 	        border-top: 1px solid #dddddd;
 	        border-right: 1px solid #cccccc;
 	        border-bottom: 1px solid #cccccc;	        
         }
+
+        .x-ie6 .current-card, .x-ie7 .current-card {
+            width:358px;
+        }
     </style>
     
     <script type="text/javascript">
         var setCard = function (t) {
-            t.addClass("current");
+            t.addCls("current");
             var index = parseInt(t.getAttribute("rel"));
-            CardsContainer.getLayout().setActiveItem(index);
+            App.CardsContainer.getLayout().setActiveItem(index);
         }
         var initCards = function () {
             var cards = this.el.select(".cards-header a");
             
             cards.hover(function (e, t) {
-                cards.removeClass("current");
+                cards.removeCls("current");
                 setCard(Ext.fly(t));
             }, Ext.emptyFn, this);
 
