@@ -517,6 +517,8 @@
     <Content Include="Examples\Toolbar\StatusBar\Overview\images\saving.gif" />
     <Content Include="Examples\TreePanel\Advanced\Image_Organizer\resources\loading.gif" />
     <Content Include="Examples\TreePanel\Loaders\WebService\TreeJsonService.asmx" />
+    <Content Include="Examples\Window\Basic\Window_Variations\config.xml" />
+    <Content Include="Examples\Window\Basic\Window_Variations\Default.aspx" />
     <Content Include="Ext.NET.Default.aspx" />
     <Content Include="HighLighter\Wilco.SyntaxHighlighter.dll" />
     <Content Include="Home\Default.old.aspx" />
@@ -549,6 +551,12 @@
     <Content Include="resources\images\welcome-bullet.png" />
     <Content Include="resources\images\welcome-screens.png" />
     <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Ext.Net\Ext.Net.csproj">
+      <Project>{195F2E70-F5E6-4A61-AAD9-2639657C29C4}</Project>
+      <Name>Ext.Net</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
