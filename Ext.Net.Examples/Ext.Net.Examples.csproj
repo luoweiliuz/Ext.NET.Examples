@@ -34,6 +34,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ext.Net, Version=2.0.4449.39235, Culture=neutral, PublicKeyToken=2e12ce3d0176cd87, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Ext.NET.2.0.0-beta\lib\Ext.Net.dll</HintPath>
+    </Reference>
     <Reference Include="Ext.Net.Utilities, Version=2.0.0.189, Culture=neutral, PublicKeyToken=2c34ac34702a3c23, processorArchitecture=MSIL">
       <HintPath>..\packages\Ext.NET.Utilities.2.0.0\lib\Ext.Net.Utilities.dll</HintPath>
     </Reference>
@@ -59,6 +63,9 @@
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Web.Mobile" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="Transformer.NET, Version=2.0.0.3590, Culture=neutral, PublicKeyToken=e274d618e7c603a7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Transformer.NET.2.0.0\lib\Transformer.NET.dll</HintPath>
+    </Reference>
     <Reference Include="Wilco.SyntaxHighlighter, Version=0.5.0.0, Culture=neutral, PublicKeyToken=fb87150479c2990b, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
@@ -230,8 +237,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Readme\Ext.NET.CHANGELOG.txt" />
+    <Content Include="App_Readme\Ext.NET.LICENSE.txt" />
+    <Content Include="App_Readme\Ext.NET.README.txt" />
     <Content Include="App_Readme\Ext.NET.Utilities.LICENSE.txt" />
     <Content Include="App_Readme\Ext.NET.Utilities.README.txt" />
+    <Content Include="App_Readme\Transformer.NET.LICENSE.txt" />
+    <Content Include="App_Readme\Transformer.NET.README.txt" />
     <Content Include="CHANGELOG.txt" />
     <Content Include="Code\SerializableEntity\ReadMe.txt" />
     <Content Include="Examples\Buttons\Basic\Default_Button\config.xml" />
@@ -505,6 +517,7 @@
     <Content Include="Examples\Toolbar\StatusBar\Overview\images\saving.gif" />
     <Content Include="Examples\TreePanel\Advanced\Image_Organizer\resources\loading.gif" />
     <Content Include="Examples\TreePanel\Loaders\WebService\TreeJsonService.asmx" />
+    <Content Include="Ext.NET.Default.aspx" />
     <Content Include="HighLighter\Wilco.SyntaxHighlighter.dll" />
     <Content Include="Home\Default.old.aspx" />
     <Content Include="README.txt" />
@@ -536,12 +549,6 @@
     <Content Include="resources\images\welcome-bullet.png" />
     <Content Include="resources\images\welcome-screens.png" />
     <Content Include="Web.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\v2\Ext.Net\Ext.Net.csproj">
-      <Project>{195F2E70-F5E6-4A61-AAD9-2639657C29C4}</Project>
-      <Name>Ext.Net</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
@@ -1533,8 +1540,8 @@
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="'$(Solutions.VSVersion)' == '10.0'" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="'$(Solutions.VSVersion)' == '9.0'" />
   <PropertyGroup>
-    <PreBuildEvent>xcopy "$(SolutionDir)Ext.Net\Build\Ext.Net\CHANGELOG.txt" "$(ProjectDir)" /y
-xcopy "$(SolutionDir)Ext.Net\Build\Ext.Net\README.txt" "$(ProjectDir)" /y</PreBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
   <!--<Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />-->
 </Project>

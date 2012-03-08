@@ -60,12 +60,11 @@
 <html>
 <head runat="server">
     <title>Ext.NET Examples - Open Source ASP.NET Web Controls with Sencha Ext JS</title>
-
     <link rel="stylesheet" type="text/css" href="resources/css/main.css" />
     <script type="text/javascript" src="resources/js/main.js"></script>
 </head>
 <body>
-    <ext:ResourceManager ID="ResourceManager1" runat="server" InitScriptMode="Linked" />
+    <ext:ResourceManager ID="ResourceManager1" runat="server" />
     
     <ext:History runat="server">
         <Listeners>
