@@ -6,7 +6,7 @@
 
 <html>
 <head runat="server">
-    <title></title>
+    <title>Adding Tabs On The Fly - Ext.NET Examples</title>
     <link href="/resources/css/examples.css" rel="stylesheet" type="text/css" />
 
     <ext:XScript runat="server">
@@ -20,12 +20,12 @@
                         title    : url, 
                         closable : true,
                         menuItem : menuItem,
-                        loader : {
+                        loader   : {
                             url      : url,
-                            rendererType : "iframe",
+                            renderer : "frame",
                             loadMask : {
                                 showMask : true,
-                                msg : "Loading " + url + "..."
+                                msg      : "Loading " + url + "..."
                             }
                         }
                     });
