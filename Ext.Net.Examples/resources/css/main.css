@@ -29,7 +29,7 @@
 	font-size   : 30px;
 	line-height : 27px;
 	height      : 30px;
-	font-weight : nomral;
+	font-weight : normal;
 	float       : left;
 	margin      : 1px 0 0 0;
 }
@@ -270,10 +270,14 @@ a#grid-badge:hover {
 	text-shadow   : 0 -1px 0 rgba(0,0,0,0.3);
 }
 
+#v1-samples {
+    float: right;
+}
+
 #v1-samples a {
     text-align: center;
-    margin-left: 50px;
     margin-top: 18px;
+    margin-right: 25px;
 }
 
 

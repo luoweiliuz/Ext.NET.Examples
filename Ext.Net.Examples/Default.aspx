@@ -86,10 +86,10 @@
 		                    <div class="minor">Ext.NET</div>		                    <div class="title">Examples Explorer <span class="title-sub">(Version 2.0 Beta)</span></div>
 		                    <div class="badge">built with Ext.NET</div>
 	                    </div>
+	                    <div id="right"><a href="http://www.ext.net/"></a></div>
                         <div id="v1-samples">
 			                <a href="http://examples1.ext.net">V1 SAMPLES &#187;</a>
 		                </div>
-	                    <div id="right"><a href="http://www.ext.net/"></a></div>
                     </div>
                 </Content>    
             </ext:Panel>
