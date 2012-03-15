@@ -13,19 +13,18 @@
         var onKeyUp = function (field) {
             var v = this.getRawValue(),
                 field;
-            if (v.length < 1) {
-                if (this.startDateField) {
-                    field = Ext.getCmp(this.startDateField);
-                    field.setMaxValue();
-                    this.dateRangeMax = null;
-                } else if (this.endDateField) {
-                    field = Ext.getCmp(this.endDateField);
-                    field.setMinValue();
-                    this.dateRangeMin = null;
-                }
 
-                field.validate();
+            if (this.startDateField) {
+                field = Ext.getCmp(this.startDateField);
+                field.setMaxValue();
+                this.dateRangeMax = null;
+            } else if (this.endDateField) {
+                field = Ext.getCmp(this.endDateField);
+                field.setMinValue();
+                this.dateRangeMin = null;
             }
+
+            field.validate();
         };
     </script>
 </head>
