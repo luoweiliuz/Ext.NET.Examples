@@ -369,7 +369,7 @@
                     <Buttons>
                         <ext:Button runat="server" Text="Toggle Enabled">
                             <Listeners>
-                                <Click Handler="#{FormPanel1}.getForm().items.each(function (item) {
+                                <Click Handler="#{FormPanel1}.getForm().getFields().each(function (item) {
                                         item.setDisabled(!item.disabled);
                                     });" />
                             </Listeners>

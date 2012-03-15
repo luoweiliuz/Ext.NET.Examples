@@ -197,7 +197,8 @@
                 Height="600"                 
                 AnimCollapse="false"
                 ConstrainHeader="true"         
-                Border="false"       
+                Border="false"      
+                CloseAction="Destroy" 
                 Layout="Fit"
                 Title="System Status">               
                 <Bin>                    

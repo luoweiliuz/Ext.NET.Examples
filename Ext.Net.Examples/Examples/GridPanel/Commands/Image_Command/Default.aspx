@@ -8,6 +8,17 @@
 <head runat="server">
     <title>Group Commands - Ext.NET Examples</title>
     <link href="/resources/css/examples.css" rel="stylesheet" type="text/css" />
+
+    <style type="text/css">
+        .x-row-body-grid .x-grid-cell{
+            border:none;
+        }
+
+        .x-row-body-grid .x-grid-rowbody {
+            margin-bottom:10px;
+        }
+    </style>
+
     <script type="text/javascript">
         var prepareCommand = function (grid, command, record, row) {
             // you can prepare group command
@@ -20,6 +31,19 @@
         var prepareGroupCommand = function (grid, command, groupId, group) {
             // you can prepare group command
         };
+
+        var getRowData = function (data, idx, record, orig) {
+            var o = Ext.grid.feature.RowBody.prototype.getAdditionalData.apply(this, arguments),
+                d = data;
+
+            Ext.apply(o, {
+                rowBodyColspan : record.fields.getCount(),
+                rowBody: Ext.String.format('<div style=\'padding:0 5px 5px 5px;\'>The {0} [{1}] requires light conditions of <i>{2}</i>.<br /><b>Price: {3}</b></div>', d.Common, d.Botanical, d.Light, Ext.util.Format.usMoney(d.Price)),
+                rowBodyCls: ""
+            });
+
+            return o;
+        };
     </script>
 </head>
 <body>
@@ -30,9 +54,10 @@
 
         <ext:GridPanel
             runat="server" 
+            Cls="x-row-body-grid"
             Collapsible="true" 
-            Width="600" 
-            Height="350"
+            Width="600"             
+            Height="350"            
             Title="Plants" 
             Frame="true">
             <Store>
@@ -137,14 +162,11 @@
             <SelectionModel>
                 <ext:RowSelectionModel runat="server" Mode="Multi" />
             </SelectionModel>
-            
+
             <View>
-                <ext:GridView runat="server">
-                    <%--<Loader> Causes JS error
-                        <LoadMask ShowMask="true" />
-                    </Loader>--%>
-                </ext:GridView>
+                <ext:GridView runat="server" StripeRows="false" />
             </View>
+            
             <Features>
                 <ext:Grouping 
                     runat="server" 
@@ -152,11 +174,7 @@
                     GroupHeaderTpl='{text} ({[values.rows.length]} {[values.rows.length > 1 ? "Items" : "Item"]})' 
                     />
                 <ext:RowBody runat="server">
-                    <GetAdditionalData 
-                        Handler="var d = data;
-                                 orig.rowBodyColspan = record.fields.getCount();
-                                 orig.rowBody = Ext.String.format('<div style=\'padding:0 5px 5px 5px;\'>The {0} [{1}] requires light conditions of <i>{2}</i>.<br /><b>Price: {3}</b></div>', d.Common, d.Botanical, d.Light, Ext.util.Format.usMoney(d.Price));">
-                    </GetAdditionalData>
+                    <GetAdditionalData Fn="getRowData" />
                 </ext:RowBody>
             </Features>         
         </ext:GridPanel>
