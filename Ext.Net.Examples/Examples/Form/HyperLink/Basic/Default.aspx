@@ -49,7 +49,7 @@
         runat="server" 
         Target="_blank"
         NavigateUrl="http://www.ext.net" 
-        ImageUrl="http://forums.ext.net/resources/images/extnet_logo.png" 
+        ImageUrl="http://speed.ext.net/identity/extnet-poweredby-small.png" 
         />
 </body>
 </html>
