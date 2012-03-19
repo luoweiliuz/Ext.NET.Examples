@@ -17,12 +17,6 @@
                        };
         }
     }
-    
-    [DirectMethod]
-    public void DirectMethod()
-    {
-        
-    }
 </script>
 
 <h1>№1</h1>
