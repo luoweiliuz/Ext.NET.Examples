@@ -11,17 +11,45 @@
 
     <script type="text/javascript">
         function getXmlResponseData(response) {
-            var xmlData = response.responseXML,
-                root = xmlData.documentElement || xmlData;            
-                            
-            return Ext.decode(root.firstChild.nodeValue);
+            try {
+                var xmlData = response.responseXML,
+                    root = xmlData.documentElement || xmlData;            
+              
+                return this.readRecords(Ext.decode(root.firstChild.nodeValue));
+            } catch (ex) {
+                var error = new Ext.data.ResultSet({
+                    total  : 0,
+                    count  : 0,
+                    records: [],
+                    success: false,
+                    message: ex.message
+                });
+
+                this.fireEvent('exception', this, response, error);
+
+                return error;
+            } 
         }
 
         function getJsonResponseData(response) {
-            var xmlData = response.responseXML,
-                root = xmlData.documentElement || xmlData;            
+            try {
+                var xmlData = response.responseXML,
+                    root = xmlData.documentElement || xmlData;            
                             
-            return Ext.decode(Ext.decode(response.responseText).d);
+                return this.readRecords(Ext.decode(Ext.decode(response.responseText).d));
+            } catch (ex) {
+                var error = new Ext.data.ResultSet({
+                    total  : 0,
+                    count  : 0,
+                    records: [],
+                    success: false,
+                    message: ex.message
+                });
+
+                this.fireEvent('exception', this, response, error);
+
+                return error;
+            }
         }
     </script>
 </head>
