@@ -29,27 +29,27 @@
                 switch(condition.Type)
                 {
                     case FilterType.Boolean:
-                        value = condition.ValueAsBoolean;
+                        value = condition.Value<bool>();
                        break;
                     case FilterType.Date:
-                        value = condition.ValueAsDate;
+                        value = condition.Value<DateTime>();
                         break;
                     case FilterType.List:
-                        value = condition.ValuesList;
+                        value = condition.List;
                         break;
                     case FilterType.Numeric:
                         if (data.Count > 0 && data[0].GetType().GetProperty(field).PropertyType == typeof(int))
                         {
-                            value = condition.ValueAsInt;
+                            value = condition.Value<int>();
                         }
                         else
                         {
-                            value = condition.ValueAsDouble;
+                            value = condition.Value<double>();
                         }
                         
                         break;
                     case FilterType.String:
-                        value = condition.Value;
+                        value = condition.Value<string>();
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
@@ -68,7 +68,7 @@
                                     switch(type)
                                     {
                                         case FilterType.List:
-                                            return !(value as ReadOnlyCollection<string>).Contains(oValue.ToString());
+                                            return !(value as List<string>).Contains(oValue.ToString());
                                         case FilterType.String:
                                             return !oValue.ToString().StartsWith(value.ToString());
                                         default:
