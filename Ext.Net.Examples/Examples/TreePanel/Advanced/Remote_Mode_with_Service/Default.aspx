@@ -1,36 +1,5 @@
 <%@ Page Language="C#" %>
-
 <%@ Register Assembly="Ext.Net" Namespace="Ext.Net" TagPrefix="ext" %>
-
-<script runat="server">
-    protected void RemoteRename(object sender, RemoteRenameEventArgs e)
-    {
-        e.Accept = true;
-
-        // 1. You can set own text
-        //    e.NewText = e.NewText + "_echo";
-        
-        // 2. You can refuse action
-        //    e.Accept = false;
-        //    e.RefusalMessage = "Error";
-    }
-
-    protected void RemoteRemove(object sender, RemoteActionEventArgs e)
-    {
-        e.Accept = true;
-    }
-
-    protected void RemoteAppend(object sender, RemoteAppendEventArgs e)
-    {
-        e.Accept = true;
-        e.Text = e.Text + "_new";
-    }
-
-    protected void RemoteMove(object sender, RemoteMoveEventArgs e)
-    {
-        e.Accept = true;
-    }
-</script>
 
 <!DOCTYPE html>
 
@@ -42,27 +11,21 @@
     <style type="text/css">
         .bold-text{
             font-weight:bold;
-            padding-left: 25px;
+            padding-left: 32px;
+            margin-bottom:2px;
             font-size:110%;
         }
     </style>
     
     <script type="text/javascript">
-        var showMenu = function (node, e) {            
-            var menu = TreeContextMenu;
+        var showMenu = function (view, node, item, index, e) {            
+            var menu = App.TreeContextMenu;
             
-            if (node.browserEvent) {			    		    
-			    this.menuNode = this.getRootNode(); 
-                menu.nodeName = "";
-                this.getSelectionModel().clearSelections();                
-                e = node;
-		    } else {			    
-			    this.menuNode = node; 
-                menu.nodeName = node.text;                
-			    node.select();	
-		    }
+			this.menuNode = node; 
+            menu.nodeName = node.get("text");                
+			view.getSelectionModel().select(node);
 		    
-		    menu.showAt([e.getXY()[0], e.getXY()[1]+18]);
+		    menu.showAt([e.getXY()[0], e.getXY()[1]+10]);
 		    e.stopEvent();
         };
     </script>
@@ -81,13 +44,19 @@
         
         <p>List of available values for LocalActions: rename, remove, append, insert, move</p>
         
-        <ext:Menu ID="TreeContextMenu" runat="server" EnableScrolling="false">
+         <ext:Menu ID="TreeContextMenu" runat="server">
             <Items>
-                <ext:MenuTextItem ID="NodeName" runat="server" Cls="bold-text" />
+                <ext:Label ID="NodeName" runat="server" Cls="bold-text" />
                 <ext:MenuSeparator />
-                <ext:MenuItem runat="server" Text="Rename" Icon="Pencil">
+                <ext:MenuItem runat="server" Text="Edit" Icon="Pencil">
                     <Listeners>
-                        <Click Handler="#{TreePanel1}.startEdit(#{TreePanel1}.menuNode, 10);" />
+                        <Click Handler="#{TreePanel1}.editingPlugin.startEdit(#{TreePanel1}.menuNode, 0);" />
+                    </Listeners>
+                </ext:MenuItem>
+
+                <ext:MenuItem runat="server" Text="Rename to 'TEST'" Icon="Pencil">
+                    <Listeners>
+                        <Click Handler="#{TreePanel1}.editNode(#{TreePanel1}.menuNode, 'text', 'TEST');" />
                     </Listeners>
                 </ext:MenuItem>
                 
@@ -103,16 +72,17 @@
                     </Listeners>
                 </ext:MenuItem>
                 
-                <ext:MenuItem runat="server" Text="Insert child" Icon="ArrowRight">
+                <ext:MenuItem runat="server" Text="Insert before this node" Icon="ArrowRight">
                     <Listeners>
-                        <Click Handler="#{TreePanel1}.appendChild(#{TreePanel1}.menuNode, 'New', true);" />
+                        <Click Handler="#{TreePanel1}.insertBefore(#{TreePanel1}.menuNode, 'New');" />
                     </Listeners>
                 </ext:MenuItem>
             </Items>
             <Listeners>
-                <Show Handler="#{NodeName}.el.update(this.nodeName);" />
+                <Show Handler="#{NodeName}.setText(this.nodeName);" />
             </Listeners>
         </ext:Menu>
+        
         
         <ext:TreePanel 
             ID="TreePanel1"
@@ -122,39 +92,54 @@
             UseArrows="true"
             AutoScroll="true"
             Animate="true"
-            EnableDD="true"
             Mode="Remote"
             RootVisible="false"
-            AllowLeafDrop="true"
             ContainerScroll="true"
             RemoteJson="true"
-            RemoteRenameUrl="RemoteTree.asmx/RemoteRename"
+            RemoteEditUrl="RemoteTree.asmx/RemoteEdit"
             RemoteRemoveUrl="RemoteTree.asmx/RemoteRemove"
             RemoteAppendUrl="RemoteTree.asmx/RemoteAppend"
             RemoteInsertUrl="RemoteTree.asmx/RemoteInsert"
             RemoteMoveUrl="RemoteTree.asmx/RemoteMove">                        
-            <Editors>
-                <ext:TreeEditor runat="server" CancelOnBlur="true">
-                    <Field>
-                        <ext:TextField runat="server"/>
-                    </Field>
-                </ext:TreeEditor>
-            </Editors>
+            <Editor>
+                <ext:TextField runat="server"/>
+            </Editor>
+            
+            <Store>
+                <ext:TreeStore runat="server">
+                    <Proxy>
+                        <ext:AjaxProxy Url="RemoteTree.asmx/GetNodes" Json="true">                            
+                            <ActionMethods Read="POST" />
+                            <Reader>
+                                <ext:JsonReader Root="d" />
+                            </Reader>
+                        </ext:AjaxProxy>
+                    </Proxy>   
+                    <Root>
+                        <ext:Node NodeID="Root" />
+                    </Root>                 
+                </ext:TreeStore>
+            </Store>
+
             <SelectionSubmitConfig Encode="true" />
             
             <Listeners>
-                <ContextMenu Fn="showMenu" StopEvent="true" />
+                <ItemContextMenu Fn="showMenu" StopEvent="true" />
+                <RemoteActionRefusal Handler="Ext.Msg.alert('Action refusal', e.message);" />
             </Listeners>
-            
-            <Loader>
-                <ext:WebServiceTreeLoader DataUrl="RemoteTree.asmx/GetNodes" Json="true" />
-            </Loader>
-            <Root>
-                <ext:AsyncTreeNode NodeID="0" Text="Root" />
-            </Root>
-            <Listeners>
-                <RemoteActionRefusal Handler="Ext.Msg.alert('Error', e.message);" />
-            </Listeners>
+
+            <View>
+                <ext:TreeView runat="server">
+                    <Plugins>
+                        <ext:TreeViewDragDrop runat="server" AllowLeafDrop="true" />
+                    </Plugins>
+                </ext:TreeView>
+            </View>
+
+            <Plugins>                
+                <ext:CellEditing runat="server" />
+                <%--<ext:RowEditing runat="server" />--%>
+            </Plugins>
         </ext:TreePanel>
     </form>
 </body>

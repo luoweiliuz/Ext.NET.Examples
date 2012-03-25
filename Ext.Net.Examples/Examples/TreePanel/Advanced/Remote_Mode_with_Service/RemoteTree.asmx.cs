@@ -35,21 +35,18 @@ namespace Ext.Net.Examples.Examples.TreePanel.Advanced.Remote_Mode_with_Service
             return nodes.ToJson();
         }
 
-        // PLEASE NOTE: under ASP.NET MVC you have to add 'd' (mimic Json WebService response) object like
-        // return new JsonResult(new { d = new {success = false, message = "Renaming is disabled" }});
-
         [WebMethod]        
-        public object RemoteRename(string id, string newText, string oldText)
+        public object RemoteEdit(string id, string newValue, string oldValue)
         {
-            return new { actionSuccess = true };
+            //return new { actionSuccess = true };
             //return new { actionSuccess = false, message = "Renaming is disabled" };
-            //return new { actionSuccess = true, response = new {text= "New text"} };
+            return new { actionSuccess = true, response = new { value = newValue + "_echo" } };
         }
 
         [WebMethod]        
         public object RemoteRemove(string id)
         {
-            return new { success = true };
+            return new { actionSuccess = true };
         }
 
         [WebMethod]
