@@ -195,7 +195,7 @@
                                 </ext:Toolbar>
                             </TopBar>
                             <Items>
-                                <ext:Container runat="server" Flex="2" Layout="HBoxLayout">
+                                <ext:Container runat="server" Height="55" Layout="HBoxLayout">
                                     <LayoutConfig>
                                         <ext:HBoxLayoutConfig Align="Stretch" />
                                     </LayoutConfig>
@@ -204,7 +204,8 @@
                                             runat="server" 
                                             Flex="1" 
                                             Layout="AnchorLayout" 
-                                            DefaultAnchor="100%">
+                                            DefaultAnchor="100%"
+                                            DefaultLabelWidth="85">
                                             <Items>
                                                 <ext:TextField
                                                     ID="txtWordPattern" 
@@ -223,43 +224,7 @@
                                                     MaxValue="99" 
                                                     AllowDecimals="false"
                                                     AutoUpdateData="true"
-                                                    />
-                                                <ext:FieldContainer 
-                                                    runat="server" 
-                                                    FieldLabel="Word Length"
-                                                    Layout="HBoxLayout">
-                                                    <LayoutConfig>
-                                                        <ext:HBoxLayoutConfig DefaultMargins="0 5 0 0" />
-                                                    </LayoutConfig>
-                                                    <Items>
-                                                        <ext:NumberField 
-                                                            ID="intMinWordLength" 
-                                                            runat="server" 
-                                                            HideLabel="true"
-                                                            Flex="1" 
-                                                            Number="3" 
-                                                            MinValue="1" 
-                                                            MaxValue="99"
-                                                            AllowDecimals="false"
-                                                            AllowBlank="false"
-                                                            AutoUpdateData="true"
-                                                            />
-                                                        <ext:DisplayField runat="server" Text="Min" Flex="1" />
-                                                        <ext:NumberField 
-                                                            ID="intMaxWordLength" 
-                                                            runat="server" 
-                                                            HideLabel="true"
-                                                            Flex="1"
-                                                            Number="20" 
-                                                            MinValue="1" 
-                                                            MaxValue="99" 
-                                                            AllowDecimals="false"
-                                                            AllowBlank="false"
-                                                            AutoUpdateData="true"
-                                                            />
-                                                        <ext:DisplayField runat="server" Text="Max" Flex="1" />
-                                                    </Items>
-                                                </ext:FieldContainer>
+                                                    />                                                
                                             </Items>
                                         </ext:Container>
                                         <ext:Container 
@@ -268,7 +233,8 @@
                                             Layout="AnchorLayout" 
                                             DefaultAnchor="100%" 
                                             Margins="0 0 0 12" 
-                                            DefaultLabelAlign="right">
+                                            DefaultLabelAlign="right"
+                                            DefaultLabelWidth="85">
                                             <Items>
                                                 <ext:TextField 
                                                     ID="txtPrefixPattern" 
@@ -281,35 +247,72 @@
                                                     runat="server" 
                                                     FieldLabel="Suffix" 
                                                     AutoUpdateData="true" 
-                                                    />
-                                                <ext:Checkbox 
-                                                    ID="chkAllowIntegerPrefix" 
-                                                    runat="server" 
-                                                    FieldLabel=" " 
-                                                    LabelSeparator="" 
-                                                    BoxLabel="Allow Integer Prefix"
-                                                    AutoUpdateData="true"
-                                                    />
-                                                <ext:Checkbox 
-                                                    ID="chkAllowIntegers" 
-                                                    runat="server" 
-                                                    Checked="true" 
-                                                    FieldLabel=" " 
-                                                    LabelSeparator="" 
-                                                    BoxLabel="Allow Integers"
-                                                    AutoUpdateData="true"
-                                                    />
-                                                <ext:Checkbox 
-                                                    ID="chkIgnoreCase" 
-                                                    runat="server" 
-                                                    Checked="true" 
-                                                    FieldLabel=" " 
-                                                    LabelSeparator="" 
-                                                    BoxLabel="Ignore Case"
-                                                    AutoUpdateData="true"
-                                                    />
+                                                    />                                                
                                             </Items>
                                         </ext:Container>
+                                    </Items>
+                                </ext:Container>
+                                <ext:FieldContainer 
+                                    runat="server"
+                                    Height="30" 
+                                    FieldLabel="Word Length"
+                                    Layout="HBoxLayout"
+                                    LabelWidth="85">
+                                    <LayoutConfig>
+                                        <ext:HBoxLayoutConfig DefaultMargins="0 5 0 0" />
+                                    </LayoutConfig>
+                                    <Items>
+                                        <ext:NumberField 
+                                            ID="intMinWordLength" 
+                                            runat="server" 
+                                            Width="60" 
+                                            Number="3" 
+                                            MinValue="1" 
+                                            MaxValue="99"
+                                            AllowDecimals="false"
+                                            AllowBlank="false"
+                                            AutoUpdateData="true"
+                                            />
+                                        <ext:DisplayField runat="server" Text="Min" Width="17" />
+                                        <ext:NumberField 
+                                            ID="intMaxWordLength" 
+                                            runat="server" 
+                                            Width="60"
+                                            Number="20" 
+                                            MinValue="1" 
+                                            MaxValue="99" 
+                                            AllowDecimals="false"
+                                            AllowBlank="false"
+                                            AutoUpdateData="true"
+                                            />
+                                        <ext:DisplayField runat="server" Text="Max" Width="17" />
+                                    </Items>
+                                </ext:FieldContainer>
+                                <ext:Container runat="server" Height="75">
+                                    <Items>
+                                        <ext:Checkbox 
+                                            ID="chkAllowIntegerPrefix" 
+                                            runat="server" 
+                                            BoxLabel="Allow Integer Prefix"
+                                            AutoUpdateData="true"
+                                            Flex="1"
+                                            />
+                                        <ext:Checkbox 
+                                            ID="chkAllowIntegers" 
+                                            runat="server" 
+                                            Checked="true" 
+                                            BoxLabel="Allow Integers"
+                                            AutoUpdateData="true"
+                                            Flex="1"
+                                            />
+                                        <ext:Checkbox 
+                                            ID="chkIgnoreCase" 
+                                            runat="server" 
+                                            Checked="true" 
+                                            BoxLabel="Ignore Case"
+                                            AutoUpdateData="true"
+                                            Flex="1"
+                                            />
                                     </Items>
                                 </ext:Container>
                                 <ext:TextArea 
