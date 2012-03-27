@@ -12,7 +12,7 @@
     <title>Ext.NET Examples</title>
 
     <script runat="server">
-        protected void CitiesRefresh(object sender, StoreRefreshDataEventArgs e)
+        protected void CitiesRefresh(object sender, StoreReadDataEventArgs e)
         {
             XmlDocument xmlDoc = new XmlDocument();
             xmlDoc.Load(HttpContext.Current.Server.MapPath("Cities.xml"));

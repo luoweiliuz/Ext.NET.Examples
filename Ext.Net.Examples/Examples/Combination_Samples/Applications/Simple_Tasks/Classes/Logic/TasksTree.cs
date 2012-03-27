@@ -16,7 +16,7 @@ namespace Ext.Net.Examples.SimpleTasks
             //Remote tree actions
             this.RemoteAppend += TasksTree_RemoteAppend;
             this.RemoteRemove += TasksTree_RemoteRemove;
-            this.RemoteRename += TasksTree_RemoteRename;
+            this.RemoteEdit += TasksTree_RemoteRename;
             this.RemoteMove += TasksTree_RemoteMove;
 
             this.Listeners.BeforeRemoteAppend.Fn = TasksTree.SCOPE + ".beforeRemoteAppend";
@@ -146,7 +146,7 @@ namespace Ext.Net.Examples.SimpleTasks
             }
         }
 
-        void TasksTree_RemoteRename(object sender, RemoteRenameEventArgs e)
+        void TasksTree_RemoteRename(object sender, RemoteEditEventArgs e)
         {
             try
             {
@@ -159,7 +159,7 @@ namespace Ext.Net.Examples.SimpleTasks
                                   select tl).First();
 
                 var query = from tl in ctx.Categories
-                            where (tl.IsFolder == category.IsFolder && tl.ParentID == category.ParentID && tl.ID != category.ID && tl.Name == e.NewText)
+                            where (tl.IsFolder == category.IsFolder && tl.ParentID == category.ParentID && tl.ID != category.ID && tl.Name == e.Value<string>())
                             select tl;
 
                 if (query.Count() > 0)
@@ -168,8 +168,8 @@ namespace Ext.Net.Examples.SimpleTasks
                     e.RefusalMessage = "Such {0} is existing in the parent folder".FormatWith(category.IsFolder ? "folder" : "category");
                     return;
                 }
-            
-                category.Name = e.NewText;
+
+                category.Name = e.Value<string>();
                 ctx.SubmitChanges();
                 e.Accept = true;
             }

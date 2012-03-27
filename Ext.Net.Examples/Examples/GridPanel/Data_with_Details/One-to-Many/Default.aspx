@@ -3,7 +3,7 @@
 <%@ Register Assembly="Ext.Net" Namespace="Ext.Net" TagPrefix="ext" %>
 
 <script runat="server">
-    protected void Store2_Refresh(object sender, StoreRefreshDataEventArgs e)
+    protected void Store2_Refresh(object sender, StoreReadDataEventArgs e)
     {
         string id = e.Parameters["SupplierID"];
         this.LinqDataSource2.WhereParameters["SupplierID"].DefaultValue = id ?? "-1";

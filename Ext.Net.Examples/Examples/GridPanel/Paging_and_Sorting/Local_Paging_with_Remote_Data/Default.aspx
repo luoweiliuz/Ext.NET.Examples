@@ -6,7 +6,7 @@
 <%@ Register Assembly="Ext.Net" Namespace="Ext.Net" TagPrefix="ext" %>
 
 <script runat="server">
-    protected void Store1_Refresh(object sender, StoreRefreshDataEventArgs e)
+    protected void Store1_Refresh(object sender, StoreReadDataEventArgs e)
     {
         int start = int.Parse(e.Parameters["startRemote"]);
         int limit = int.Parse(e.Parameters["limitRemote"]);

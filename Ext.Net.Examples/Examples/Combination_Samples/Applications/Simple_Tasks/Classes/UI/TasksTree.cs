@@ -22,7 +22,7 @@ namespace Ext.Net.Examples.SimpleTasks
             this.Mode = TreePanelMode.Remote;
             this.Cls = "tasks-tree";
             //this.EnableDD = true;
-            this.AllowLeafDrop = true;
+            //this.AllowLeafDrop = true;
             //this.DDAppendOnly = true;
             this.DirectEventConfig.Type = DirectEventType.Load;
             //this.DDGroup = "tasktree";

@@ -119,7 +119,7 @@
         }
     }
  
-    protected void RefreshDataSet(object sender, StoreRefreshDataEventArgs e)
+    protected void RefreshDataSet(object sender, StoreReadDataEventArgs e)
     {
         switch (e.Parameters["set"])
         {

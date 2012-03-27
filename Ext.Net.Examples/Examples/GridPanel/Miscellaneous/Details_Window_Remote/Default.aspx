@@ -18,7 +18,7 @@
         this.WindowEditor1.Show();            
     }
 
-    protected void Store1_RefreshData(object sender, StoreRefreshDataEventArgs e)
+    protected void Store1_RefreshData(object sender, StoreReadDataEventArgs e)
     {
         int count;
         this.Store1.DataSource = Employee.GetEmployeesFilter(e.Start, e.Limit, e.Sort.Length > 0 ? e.Sort[0] : null, out count);

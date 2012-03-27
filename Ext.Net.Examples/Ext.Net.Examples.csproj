@@ -406,6 +406,8 @@
     <Content Include="Examples\Form\NumberField\Overview\Default.aspx" />
     <Content Include="Examples\Getting_Started\Introduction\CHANGELOG\Default.aspx" />
     <Content Include="Examples\Getting_Started\Introduction\README\Default.aspx" />
+    <Content Include="Examples\GridPanel\Associations\HasMany\config.xml" />
+    <Content Include="Examples\GridPanel\Associations\HasMany\Default.aspx" />
     <Content Include="Examples\GridPanel\ComponentColumn\Editor\config.xml" />
     <Content Include="Examples\GridPanel\ComponentColumn\Editor\Default.aspx" />
     <Content Include="Examples\GridPanel\Commands\Over_Commands\config.xml" />

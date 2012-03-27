@@ -32,7 +32,7 @@
         });
     }
 
-    protected void Store1_Refresh(object sender, StoreRefreshDataEventArgs e)
+    protected void Store1_Refresh(object sender, StoreReadDataEventArgs e)
     {
         this.Store1.DataBind();
     }

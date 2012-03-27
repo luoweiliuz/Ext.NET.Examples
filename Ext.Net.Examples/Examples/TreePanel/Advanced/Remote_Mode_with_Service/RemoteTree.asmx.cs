@@ -36,11 +36,19 @@ namespace Ext.Net.Examples.Examples.TreePanel.Advanced.Remote_Mode_with_Service
         }
 
         [WebMethod]        
-        public object RemoteEdit(string id, string newValue, string oldValue)
+        public object RemoteEdit(string id, string field, string newValue, string oldValue)
         {
             //return new { actionSuccess = true };
             //return new { actionSuccess = false, message = "Renaming is disabled" };
             return new { actionSuccess = true, response = new { value = newValue + "_echo" } };
+        }
+
+        [WebMethod]
+        public object RemoteEdit_RowEditing(Dictionary<string, object> newValues, Dictionary<string, object> oldValues)
+        {
+            //return new { actionSuccess = true };
+            //return new { actionSuccess = false, message = "Renaming is disabled" };
+            return new { actionSuccess = true, response = new { value = new { text = newValues["text"]+"_echo" } } };
         }
 
         [WebMethod]        
@@ -53,17 +61,17 @@ namespace Ext.Net.Examples.Examples.TreePanel.Advanced.Remote_Mode_with_Service
         public object RemoteAppend(string id, string parentId, string text)
         {
             //return new { actionSuccess = true, response = new { id = "newId", text = text + "_new" } };
-            return new { actionSuccess = true, response = new { text = text + "_new" } };
+            return new { actionSuccess = true, response = new { id = "newId", attributes = new { text = text + "_new" } } };
         }
 
         [WebMethod]
         public object RemoteInsert(string id, string parentId, string text)
         {
-            return new { actionSuccess = true, response = new { text = text + "_new" } };
+            return new { actionSuccess = true, response = new { value = text + "_new" } };
         }
 
         [WebMethod]
-        public object RemoteMove(string id, string targetId, string point)
+        public object RemoteMove(string[] ids, string targetId, string point)
         {
             return new { actionSuccess = true };
         }

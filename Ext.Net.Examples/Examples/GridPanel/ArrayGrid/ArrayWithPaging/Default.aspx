@@ -11,7 +11,7 @@
         }
     }
 
-    protected void MyData_Refresh(object sender, StoreRefreshDataEventArgs e)
+    protected void MyData_Refresh(object sender, StoreReadDataEventArgs e)
     {
         this.BindData();
     }

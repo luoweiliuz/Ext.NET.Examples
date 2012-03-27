@@ -193,7 +193,7 @@ namespace Ext.Net.Examples.SimpleTasks
             }
         }
 
-        void TasksGrid_RefreshData(object sender, StoreRefreshDataEventArgs e)
+        void TasksGrid_RefreshData(object sender, StoreReadDataEventArgs e)
         {
             int categoryID;
 

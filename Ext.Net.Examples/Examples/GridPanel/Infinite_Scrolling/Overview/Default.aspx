@@ -3,7 +3,7 @@
 <%@ Register Assembly="Ext.Net" Namespace="Ext.Net" TagPrefix="ext" %>
 
 <script runat="server">
-    protected void Store_ReadData(object sender, StoreRefreshDataEventArgs e)
+    protected void Store_ReadData(object sender, StoreReadDataEventArgs e)
     {
         Store store = (Store)sender;
         List<StockQuotation> data = new List<StockQuotation>();

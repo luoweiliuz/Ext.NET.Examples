@@ -78,7 +78,7 @@
         }
     }
 
-    protected void Store1_RefreshData(object sender, StoreRefreshDataEventArgs e)
+    protected void Store1_RefreshData(object sender, StoreReadDataEventArgs e)
     {
         this.Store1.DataSource = this.GetDataTable();
         this.Store1.DataBind(); 

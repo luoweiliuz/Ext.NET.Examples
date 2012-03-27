@@ -58,7 +58,7 @@
         this.Label1.Text = "Values of selected record: " + e.ExtraParams["record"];
     }
 
-    protected void Store1_Refresh(object sender, StoreRefreshDataEventArgs e)
+    protected void Store1_Refresh(object sender, StoreReadDataEventArgs e)
     {
         this.Store1.DataSource = this.TestData;
         this.Store1.DataBind();

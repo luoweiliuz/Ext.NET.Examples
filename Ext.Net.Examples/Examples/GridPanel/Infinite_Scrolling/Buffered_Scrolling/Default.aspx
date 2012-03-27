@@ -65,17 +65,14 @@
             runat="server" 
             Title="Bufffered Grid of 5,000 random records" 
             DisableSelection="true"
-            InvalidateScrollerOnRefresh="false"
             Width="700" 
             Height="500">
             <Store>
                 <ext:Store 
                     ID="Store1" 
                     runat="server" 
-                    PageSize="50" 
-                    Buffered="true" 
-                    PurgePageCount="0" 
-                    AutoLoad="false">                    
+                    PageSize="5000" 
+                    Buffered="true">                    
                     <Model>
                         <ext:Model runat="server">
                             <Fields>
@@ -86,10 +83,7 @@
                         </ext:Model>
                     </Model>            
                 </ext:Store>
-            </Store>
-            <VerticalScroller>
-                <ext:GridPagingScroller runat="server" ActivePrefetch="false" />
-            </VerticalScroller>
+            </Store>            
             <View>
                 <ext:GridView runat="server" TrackOver="false" />
             </View>
@@ -102,10 +96,7 @@
                         <Renderer Format="UsMoney" />
                     </ext:Column>                    
                 </Columns>
-            </ColumnModel>
-            <Listeners>
-                <AfterRender Handler="this.store.cacheRecords(this.store.proxy.getRecords());this.store.guaranteeRange(0, 49);" Delay="100" />
-            </Listeners>                              
+            </ColumnModel>            
         </ext:GridPanel>
     </form>
 </body>

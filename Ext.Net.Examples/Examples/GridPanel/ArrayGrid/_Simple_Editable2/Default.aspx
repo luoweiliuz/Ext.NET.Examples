@@ -46,7 +46,7 @@
         }
     }
     
-    protected void Store1_RefreshData(object sender, StoreRefreshDataEventArgs e)
+    protected void Store1_RefreshData(object sender, StoreReadDataEventArgs e)
     {
         var store = this.GridPanel1.GetStore();
         var data = this.TestData;

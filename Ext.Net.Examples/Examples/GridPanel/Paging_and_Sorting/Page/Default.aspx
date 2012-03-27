@@ -3,8 +3,8 @@
 <%@ Register Assembly="Ext.Net" Namespace="Ext.Net" TagPrefix="ext" %>
 
 <script runat="server">
-    StoreRefreshDataEventArgs e;
-    protected void Store1_RefreshData(object sender, StoreRefreshDataEventArgs e)
+    StoreReadDataEventArgs e;
+    protected void Store1_RefreshData(object sender, StoreReadDataEventArgs e)
     {
         string tpl = "Start: {0}<br />Limit: {1}<br />Sort: {2}<br />Dir: {3}";
 

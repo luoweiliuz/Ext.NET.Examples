@@ -94,8 +94,8 @@
             Animate="true"
             Mode="Remote"
             RootVisible="false"
-            ContainerScroll="true"
             RemoteJson="true"
+            ContainerScroll="true"        
             RemoteEditUrl="RemoteTree.asmx/RemoteEdit"
             RemoteRemoveUrl="RemoteTree.asmx/RemoteRemove"
             RemoteAppendUrl="RemoteTree.asmx/RemoteAppend"
@@ -121,7 +121,7 @@
                 </ext:TreeStore>
             </Store>
 
-            <SelectionSubmitConfig Encode="true" />
+            <DirectEventConfig Method="POST" />
             
             <Listeners>
                 <ItemContextMenu Fn="showMenu" StopEvent="true" />
@@ -138,7 +138,6 @@
 
             <Plugins>                
                 <ext:CellEditing runat="server" />
-                <%--<ext:RowEditing runat="server" />--%>
             </Plugins>
         </ext:TreePanel>
     </form>

@@ -62,7 +62,7 @@
     {
     }
 
-    protected void FetchRecord(object sender, StoreRefreshDataEventArgs e)
+    protected void FetchRecord(object sender, StoreReadDataEventArgs e)
     {
         this.Store1.DataSource = new List<Data> { DataSource[e.Start] };
         this.Store1.DataBind();

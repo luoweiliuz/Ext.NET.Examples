@@ -6,7 +6,7 @@
 <%@ Register Assembly="Ext.Net" Namespace="Ext.Net" TagPrefix="ext" %>
 
 <script runat="server">
-    protected void Store1_RefreshData(object sender, StoreRefreshDataEventArgs e)
+    protected void Store1_RefreshData(object sender, StoreReadDataEventArgs e)
     {
         List<object> data = FiltersTestData.Data;
 

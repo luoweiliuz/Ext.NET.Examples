@@ -2,7 +2,7 @@
 <%@ Register Assembly="Ext.Net" Namespace="Ext.Net" TagPrefix="ext" %>
 
 <script runat="server">
-    [DirectMethod(IDAlias="FeedInfo", ShowMask=true)]
+    [DirectMethod(IDAlias = "FeedInfo", ShowMask = true)]
     public void AddFeed(string container, string title, string url)
     {
         var config = new UserControlRendrerConfig

@@ -12,7 +12,7 @@
         }
     }
 
-    protected void AddRecords(object sender, StoreRefreshDataEventArgs e)
+    protected void AddRecords(object sender, StoreReadDataEventArgs e)
     {
         this.BindData(int.Parse(e.Parameters["count"] ?? "0"));
     }

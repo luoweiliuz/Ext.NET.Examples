@@ -29,7 +29,7 @@
         }
     }
         
-    protected void StatesRefresh(object sender, StoreRefreshDataEventArgs e)
+    protected void StatesRefresh(object sender, StoreReadDataEventArgs e)
     {
         string country = e.Parameters["query"];
             
@@ -43,7 +43,7 @@
         StateStore.DataBind();
     }
 
-    protected void CitiesRefresh(object sender, StoreRefreshDataEventArgs e)
+    protected void CitiesRefresh(object sender, StoreReadDataEventArgs e)
     {
         string state = e.Parameters["query"];
 
@@ -57,7 +57,7 @@
         CityStore.DataBind();
     }
 
-    protected void RegionsRefresh(object sender, StoreRefreshDataEventArgs e)
+    protected void RegionsRefresh(object sender, StoreReadDataEventArgs e)
     {
         string city = e.Parameters["query"];
 

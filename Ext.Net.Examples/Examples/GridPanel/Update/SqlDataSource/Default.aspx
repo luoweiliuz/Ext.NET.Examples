@@ -70,7 +70,7 @@
         }
     }
 
-    protected void Store1_RefershData(object sender, StoreRefreshDataEventArgs e)
+    protected void Store1_RefershData(object sender, StoreReadDataEventArgs e)
     {
         this.Store1.DataBind();
     }

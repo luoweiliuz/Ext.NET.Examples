@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 
 <script runat="server">    
-    protected void OnReadData(object sender, StoreRefreshDataEventArgs e)
+    protected void OnReadData(object sender, StoreReadDataEventArgs e)
     {
         CultureInfo ci = new CultureInfo("en-US");
         Store store = GridPanel1.Store.Primary;
